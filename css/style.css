@@ -1,0 +1,153 @@
+*,*::before,*::after{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+    list-style: none;
+    text-decoration: none;
+}
+
+@font-face {
+    font-family: 'vazir';
+    src: url('../assets/fonts/Vazirmatn[wght].woff2') format('woff2'),
+         url('../assets/fonts/Vazirmatn-Thin.woff2') format('woff2')
+         url('../assets/fonts/Vazirmatn-SemiBold.woff2') format('woff2')
+         url('../assets/fonts/Vazirmatn-Regular.woff2') format('woff2')
+         url('../assets/fonts/Vazirmatn-Medium.woff2') format('woff2')
+         url('../assets/fonts/Vazirmatn-Light.woff2') format('woff2')
+         url('../assets/fonts/Vazirmatn-ExtraLight.woff2') format('woff2')
+         url('../assets/fonts/Vazirmatn-Bold.woff2') format('woff2')
+         url('../assets/fonts/Vazirmatn-Black.woff2') format('woff2')
+         url('../assets/fonts/Vazirmatn-ExtraBold.woff2') format('woff2');
+
+}
+
+:root
+{
+    --white-color : #fff;
+    --gray-color : #9ca3af;
+    --numberRequestBg-color : #AFCEDD;
+    --numberRequset-color : #234894;
+    --btnRequest-color : #219F95;
+    
+}
+
+html{
+    font-size: 62.5%;
+    font-family: 'vazir';
+}
+
+body{
+    direction: rtl;
+    
+}
+
+.main
+{
+   height: 100vh;
+   margin : 1.6rem auto;
+   max-width:calc(80% - 4rem);
+}
+
+.container
+{
+    height: calc(100% - 3rem);
+}
+
+.heading
+{
+    margin : 1.6rem 1.6rem 0 0;
+}
+
+.allRequests
+{
+   margin-top : 2.4rem;
+   display: grid;
+   grid-template-columns: repeat(3,1fr);
+   gap:1.6rem;
+}
+
+.request
+{
+    grid-column: 1/-1;
+    /* border:1px solid var(--btnRequest-color); */
+    padding : 1.6rem 1.6rem;
+}
+
+.reqHeader
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.upd{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.upd span
+{
+    
+    width:2.4rem;
+    height: 2.4rem;
+    margin-left: .8rem;
+    background-color: var(--numberRequestBg-color);
+    color : var(--numberRequset-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.reqBody , .reqFooter
+{
+    margin : 1.6rem 0;
+}
+
+.reqFooter,.requester
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.requester img{
+    margin-left: .5rem;
+    width: 3rem;
+    height: 3rem;
+    /* border:.1rem solid var(--gray-color); */
+    border-radius: .5rem;
+}
+
+.btn
+{
+    width:9rem;
+    height:4.5rem;
+    background-color: var(--btnRequest-color);
+    border: none;
+    border-radius: .8rem;
+    padding: .4rem;
+    color: var(--white-color)
+}
+
+@media screen and (  width >= 768px)
+{
+    .allRequests
+    {
+        grid-template-columns: repeat(2 ,1fr);
+    }
+    .request{
+        grid-column: span 1;
+    }
+    
+}
+
+@media screen and (min-width:1024px)
+{
+    .allRequests
+    {
+        grid-template-columns: repeat(3 ,1fr);
+    }
+    
+}
+
